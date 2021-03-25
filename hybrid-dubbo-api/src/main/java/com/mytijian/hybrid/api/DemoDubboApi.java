@@ -4,6 +4,8 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+@FeignClient("hybrid-dubbo-demo")
 public interface DemoDubboApi {
-    public String echo(@PathVariable String string);
+    @GetMapping(value = "/echo/{string}")
+    public String echo(@PathVariable("string") String string);
 }

@@ -2,6 +2,7 @@ package com.mytijian.hybrid.controller;
 
 import com.mytijian.hybrid.api.DemoDubboApi;
 import org.apache.dubbo.config.annotation.DubboReference;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,7 +22,7 @@ public class HybridDubboController {
 
     @GetMapping("/dubbo/echo")
     public String echo(@RequestParam String echo) {
-        return "invoker: dubbo, provider: dubbo, " + demoDubboApi.echo(echo);
+        return demoDubboApi.echo(echo);
     }
 
 }

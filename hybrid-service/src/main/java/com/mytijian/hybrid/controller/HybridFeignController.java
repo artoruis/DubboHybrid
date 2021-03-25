@@ -1,6 +1,6 @@
 package com.mytijian.hybrid.controller;
 
-import com.mytijian.hybrid.api.DemoApi;
+import com.mytijian.hybrid.api.DemoDubboApi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,11 +17,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class HybridFeignController {
 
     @Autowired
-    private DemoApi demoApi;
+    private DemoDubboApi demoDubboApi;
 
     @GetMapping("/feign/echo")
     public String echo(@RequestParam String echo) {
-        return demoApi.echo(echo);
+        return "invoker: feign, provider: dubbo rest, " + demoDubboApi.echo(echo);
     }
 
 }

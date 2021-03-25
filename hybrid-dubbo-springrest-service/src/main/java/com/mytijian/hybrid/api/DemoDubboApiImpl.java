@@ -1,6 +1,7 @@
 package com.mytijian.hybrid.api;
 
 import org.apache.dubbo.config.annotation.DubboService;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -13,15 +14,12 @@ import javax.ws.rs.PathParam;
  * @create 2021-03-22 20:50
  * @see
  */
-@DubboService(protocol = { "dubbo", "rest"})
-//@RestController
-@Path("/")
+@DubboService(protocol = { "dubbo"})
+@RestController
 public class DemoDubboApiImpl implements DemoDubboApi {
 
     @Override
-    @Path("echo/{string}")
-    @GET
-    public String echo(@PathParam("string") String string) {
-        return "Hello Dubbo: " + string;
+    public String echo(String string) {
+        return "Hello Dubbo with spring rest: " + string;
     }
 }
