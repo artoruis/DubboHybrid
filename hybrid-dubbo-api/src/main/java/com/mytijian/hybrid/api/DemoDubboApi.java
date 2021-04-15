@@ -7,5 +7,5 @@ import org.springframework.web.bind.annotation.PathVariable;
 @FeignClient("hybrid-dubbo-demo")
 public interface DemoDubboApi {
     @GetMapping(value = "/echo/{string}")
-    public String echo(@PathVariable("string") String string);
+    String echo(@PathVariable("string") String string);
 }

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <dubbo:application name="hybrid-dubbo-demo" owner="mytijian-uic"/>
+    <dubbo:monitor protocol="registry"/>
+    <dubbo:registry protocol="spring-cloud" address="spring-cloud://localhost" timeout="10000"/>
+    <dubbo:protocol id="dubbo" name="dubbo" dispatcher="all" port="20888" threadpool="fixed" threads="100"/>
+    <dubbo:protocol id="rest" name="rest" dispatcher="all" port="10880" threadpool="fixed" threads="100" server="netty"/>
+
+    <!-- 用户相关Dubbo接口 -->
+    <dubbo:service ref="demoDubboApi" interface="com.mytijian.hybrid.api.DemoDubboApi" protocol="dubbo, rest"/>
+</beans>

@@ -10,7 +10,6 @@
     <description>Demo project for Spring Cloud and Dubbo hybrid</description>
 
     <modules>
-        <module>hybrid-api</module>
         <module>hybrid-dubbo-api</module>
         <module>hybrid-service</module>
         <module>hybrid-dubbo-service</module>
@@ -22,7 +21,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-boot.version>2.3.7.RELEASE</spring-boot.version>
-        <spring-cloud-alibaba.version>2.2.2.RELEASE</spring-cloud-alibaba.version>
+        <spring-cloud-alibaba.version>2.2.5.RELEASE</spring-cloud-alibaba.version>
         <spring-cloud.version>Hoxton.SR9</spring-cloud.version>
         <dubbo.version>2.7.8</dubbo.version>
     </properties>

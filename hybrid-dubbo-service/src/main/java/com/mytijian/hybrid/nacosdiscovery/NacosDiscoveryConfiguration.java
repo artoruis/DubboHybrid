@@ -25,8 +25,5 @@ import org.springframework.context.annotation.Configuration;
  */
 @EnableDiscoveryClient
 @Configuration
-@EnableFeignClients(basePackages = {
-        "com.mytijian",
-})
 public class NacosDiscoveryConfiguration {
 }

@@ -1,6 +1,7 @@
 package com.mytijian.hybrid.api;
 
 import org.apache.dubbo.config.annotation.DubboService;
+import org.springframework.stereotype.Service;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -13,8 +14,7 @@ import javax.ws.rs.PathParam;
  * @create 2021-03-22 20:50
  * @see
  */
-@DubboService(protocol = { "dubbo", "rest"})
-//@RestController
+@DubboService(protocol = { "dubbo", "rest"}, timeout = 5000)
 @Path("/")
 public class DemoDubboApiImpl implements DemoDubboApi {
 
